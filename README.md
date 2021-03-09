@@ -13,4 +13,4 @@ pip install -r requirements.txt
 python server.py
 ```
 
-Then navigate to [](http://localhost:8080)
+Then navigate to [http://localhost:8080]()
