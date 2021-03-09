@@ -5,4 +5,37 @@
 <p>
 Here is an endpoint that hangs for two seconds
 <a href="./sleep/2">"./sleep/2"</a>, and might fail.
+The button below does as follows:
 </p>
+
+
+<pre>
+let resp = await fetch("/sleep/0");
+if (resp.ok) {
+  reportStatus("Success");
+} else {
+  reportStatus("Failure");
+}
+<pre>
+
+
+<script>
+"use strict";
+
+function reportStatus(s) {
+  document.getElementById("status").innerText = s;
+}
+
+async function runTest() {
+  let resp = await fetch("/sleep/0");
+  if (resp.ok) {
+    reportStatus("Success");
+  } else {
+    reportStatus("Failure");
+  }
+}
+</script>
+<button onclick="runTest()">Click Me</button>
+
+
+<div>Status:<span id="status">None</span></div>
